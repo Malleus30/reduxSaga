@@ -4,7 +4,7 @@ import { counterReducer } from "./counterReducer";
 import {customerReducer } from "./customerReducer";
 //import thunk from 'redux-thunk'
 import createSagaMiddleware from'redux-saga';
-import { counttWatcher } from "../saga/counterSaga";
+import { rootWatcher } from "../saga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -16,4 +16,4 @@ const rootReducer = combineReducers({
 
 export const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 
-sagaMiddleware.run(counttWatcher);
+sagaMiddleware.run(rootWatcher);

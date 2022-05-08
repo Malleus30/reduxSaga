@@ -4,7 +4,9 @@ const defaultState = {
 
 const ADD_CUSTOMER = 'ADD_CUSTOMER';
 const REMOVE_CUSTOMER = 'REMOVE_CUSTOMER';
-const ADD_MANY_CUSTOMERS = 'ADD_MANY_CUSTOMERS';
+export const ADD_MANY_CUSTOMERS = 'ADD_MANY_CUSTOMERS';
+
+export const FETCH_USERS_SAGA = 'FETCH_USERS_SAGA';
 
 export const customerReducer = (state = defaultState, action) =>{
     switch(action.type){
@@ -31,3 +33,6 @@ export const customerReducer = (state = defaultState, action) =>{
   export const addCustomerAction = (payload) => ({type:ADD_CUSTOMER, payload});
   export const removeCustomerAction = (payload) => ({type:REMOVE_CUSTOMER, payload});
   export const addManyCustomersAction= (payload) => ({type:ADD_MANY_CUSTOMERS, payload});
+
+
+  export const fetchUsersSagaAction = () => ({type: FETCH_USERS_SAGA});
